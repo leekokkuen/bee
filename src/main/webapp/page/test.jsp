@@ -8,26 +8,45 @@
 <link rel="stylesheet" type="text/css" href="../css/jquery.mobile.flatui.css" />
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+<script src="../js/lee.js"></script>
 </head>
-<body>
-<div data-role="page">
-<div data-role="header" data-theme="b">
-<h1>登录</h1>
-</div>
-
-<div data-role="content">
-  <form method="post" action="demoform.asp">
-    <div data-role="content" role="main">
-      <input type="text" name="fullname" id="fullname" data-theme="b" placeholder="账户名/手机号/Email" />
-      <input type="password" name="password" id="password" data-theme="b" placeholder="密码" />
-    </div>
-    <div data-role="content" role="main">
-    <fieldset class="ui-grid-a">
-        <button data-theme="b">登录</button>
-    </fieldset>
-    </div>
-  </form>
-</div>
-</div>
-</body>
+	<body>
+		<div data-role="page">
+			<div data-role="header" data-theme="b">
+			<h1>登录</h1>
+			</div>
+		
+			<div data-role="content">
+			  <form method="post" id="ff">
+			    <div data-role="content" role="main">
+			      <input type="text" name="user" id="user" data-theme="b" placeholder="账户名/手机号/Email" />
+			      <input type="password" name="password" id="password" data-theme="b" placeholder="密码" />
+			    </div>
+			    <div data-role="content" role="main">
+			    <fieldset class="ui-grid-a">
+			        <button data-theme="b" onclick="submitForm()">登录</button>
+			    </fieldset>
+			    </div>
+			  </form>
+			</div>
+		</div>
+		<script>
+		function submitForm(){
+			debugger;
+			//$('#ff').attr("action", getRootPath()+'/login/doLogin.ajax');
+			//$('#ff').submit();
+			
+			$.post(getRootPath()+'/login/doLogin.ajax',
+					$('#ff').serializeArray(),
+					function(data){
+						 var obj1 = $.parseJSON(data);
+				    	 alert(obj1.code);    
+				});
+		}
+		
+		function clearForm(){
+			$('#ff').form('clear');
+		}
+		</script>
+	</body>
 </html>

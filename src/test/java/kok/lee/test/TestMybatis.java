@@ -33,7 +33,7 @@ public class TestMybatis {
 
 	@Test
 	public void test1() {
-		Person u = new Person("155","liuhui");
+		Person u = new Person("155111","liuhui");
 		upersonService.insert(u);
 	}
 

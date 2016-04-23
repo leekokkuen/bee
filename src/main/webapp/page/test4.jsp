@@ -20,8 +20,8 @@
 				<ul data-role="listview" data-inset="true" data-theme="b">
 					<li data-role="list-divider" data-theme="b">List Header</li>
 					
-					<li><a href="#"><img src="../img/album-hc.jpg">Broken Bell<p>Phoenix</p></a></li>
-					<li><a href="#"><img src="../img/album-hc.jpg">Warning<p>Phoenix</p></a></li>
+					<li data-theme="c"><a href="#"><img src="../img/album-hc.jpg">Broken Bell<p>Phoenix</p></a></li>
+					<li data-theme="c"><a href="#"><img src="../img/album-hc.jpg">Warning<p>Phoenix</p></a></li>
 				</ul>
 			</div>
 		</div>
